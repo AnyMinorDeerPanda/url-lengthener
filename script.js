@@ -1,23 +1,30 @@
 const urlParams = new URLSearchParams(window.location.search);
+const urlLength = urlParams.get('a');
 const urlCode = urlParams.get('aaaaaaaaaaaaaaaaaaaaaaaaaaaa');
-const urlLength = 10;
 
 if (urlCode) {
-    window.location.replace(degibify(urlCode));    
+    if (urlLength) {
+	if (!isNaN(urlLength)) {
+            window.location.replace(degibify(urlCode, urlLength));
+	}
+    } else () {
+        window.location.replace(degibify(urlCode, 10));
+    }
 }
 
 const element = document.getElementById('lengthen')
 element.addEventListener("click", () => {
     var url = document.getElementById('url').value
+    var length = document.getElementById('length').value
     if (validURL(url)) {
-        copyToClipboard("https://aaaaaaaaaaaaaaaaaaaa.xtract.space/?aaaaaaaaaaaaaaaaaaaaaaaaaaaa="+ gibify(url))
-        alert("Link Created for "+ url);
+        copyToClipboard("https://aaaaaaaaaaaaaaaaaaaa.xtract.space/?a="+ length+ "aaaaaaaaaaaaaaaaaaaaaaaaaaaa="+ gibify(url, length))
+        alert("Link copied to clipboard!");
     } else {
         alert("Error: Invalid URL!");
     }
 });
 
-function gibify(str) {
+function gibify(str, length) {
     let hex = a2hex(str)
     let hexArray = hex.split('');
 	let gibChars = hexArray.map(char => {
@@ -43,7 +50,7 @@ function gibify(str) {
 	})
 
     let out = gibChars.join('');
-	return out.repeat(urlLength)
+	return out.repeat(length)
 }
 
 function degibify(gib) {
@@ -71,7 +78,7 @@ function degibify(gib) {
 	})
 
     let out = hex2a(strChars.join(''))
-    return out.substring(Object.keys(out).length - (Object.keys(out).length / urlLength), Object.keys(out).length)
+    return out.substring(Object.keys(out).length - (Object.keys(out).length / length), Object.keys(out).length)
 }
 
 function a2hex(str) {
