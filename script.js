@@ -15,9 +15,9 @@ if (urlCode) {
 const element = document.getElementById('lengthen')
 element.addEventListener("click", () => {
     var url = document.getElementById('url').value
-    var length = document.getElementById('length').value
+    var lenth = document.getElementById('length').value
     if (validURL(url)) {
-        copyToClipboard("https://aaaaaaaaaaaaaaaaaaaa.xtract.space/?a="+ length+ "&aaaaaaaaaaaaaaaaaaaaaaaaaaaa="+ gibify(url, length))
+        copyToClipboard("https://aaaaaaaaaaaaaaaaaaaa.xtract.space/?a="+ lenth+ "&aaaaaaaaaaaaaaaaaaaaaaaaaaaa="+ gibify(url, lenth))
         alert("Link copied to clipboard!");
     } else {
         alert("Error: Invalid URL!");
@@ -53,7 +53,7 @@ function gibify(str, length) {
 	return out.repeat(length)
 }
 
-function degibify(gib) {
+function degibify(gib, length) {
     let gibArray = gib.split('');
 	let strChars = gibArray.map(char => {
         const chars = {
