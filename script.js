@@ -7,7 +7,7 @@ if (urlCode) {
 	if (!isNaN(urlLength)) {
             window.location.replace(degibify(urlCode, urlLength));
 	}
-    } else () {
+    } else {
         window.location.replace(degibify(urlCode, 10));
     }
 }
