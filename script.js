@@ -17,7 +17,7 @@ element.addEventListener("click", () => {
     var url = document.getElementById('url').value
     var length = document.getElementById('length').value
     if (validURL(url)) {
-        copyToClipboard("https://aaaaaaaaaaaaaaaaaaaa.xtract.space/?a="+ length+ "aaaaaaaaaaaaaaaaaaaaaaaaaaaa="+ gibify(url, length))
+        copyToClipboard("https://aaaaaaaaaaaaaaaaaaaa.xtract.space/?a="+ length+ "&aaaaaaaaaaaaaaaaaaaaaaaaaaaa="+ gibify(url, length))
         alert("Link copied to clipboard!");
     } else {
         alert("Error: Invalid URL!");
