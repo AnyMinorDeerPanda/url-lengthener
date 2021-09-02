@@ -9,7 +9,7 @@ const element = document.getElementById('lengthen')
 element.addEventListener("click", () => {
     var url = document.getElementById('url').value
     if (validURL(url)) {
-        copyToClipboard("https://url-lengthener.anyminordeerpanda.repl.co/?aaaaaaaaaaaaaaaaaaaaaaaaaaaa="+ gibify(url))
+        copyToClipboard("https://aaaaaaaaaaaaaaaaaaaa.xtract.space/?aaaaaaaaaaaaaaaaaaaaaaaaaaaa="+ gibify(url))
         alert("Link Created for "+ url);
     } else {
         alert("Error: Invalid URL!");
