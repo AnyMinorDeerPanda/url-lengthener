@@ -10,7 +10,7 @@ const element = document.getElementById('lengthen')
 element.addEventListener("click", () => {
     var url = document.getElementById('url').value
     if (validURL(url)) {
-        copyToClipboard("https://www.xtract.space/url-lengthener/?aaaaaaaaaaaaaaaaaaaaaaaaaaaa="+ gibify(url))
+        copyToClipboard("https://aaaaaaaaaaaaaaaaaaaa.xtract.space/?aaaaaaaaaaaaaaaaaaaaaaaaaaaa="+ gibify(url))
         alert("Link Created for "+ url);
     } else {
         alert("Error: Invalid URL!");
