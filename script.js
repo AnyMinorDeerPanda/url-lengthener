@@ -18,7 +18,7 @@ element.addEventListener("click", () => {
 });
 
 function gibify(str) {
-    let hex = str.hexEncode()
+    let hex = a2hex(str)
     let hexArray = hex.split('');
 	let gibChars = hexArray.map(char => {
         const chars = {
@@ -69,31 +69,25 @@ function degibify(gib) {
 		return chars[char];
 	})
 
-    return strChars.join('').hexDecode()
+    return hex2a(strChars.join(''))
 }
 
-String.prototype.hexDecode = function() {
-    var j;
-    var hexes = this.match(/.{1,4}/g) || [];
-    var back = "";
-    for(j = 0; j<hexes.length; j++) {
-        back += String.fromCharCode(parseInt(hexes[j], 16));
-    }
+function a2hex(str) {
+  var arr = [];
+  for (var i = 0, l = str.length; i < l; i ++) {
+    var hex = Number(str.charCodeAt(i)).toString(16);
+    arr.push(hex);
+  }
+  return arr.join('');
+}
 
-    return back;
-};
-
-String.prototype.hexEncode = function() {
-    var hex, i;
-
-    var result = "";
-    for (i=0; i<this.length; i++) {
-        hex = this.charCodeAt(i).toString(16);
-        result += ("000"+hex).slice(-4);
-    }
-
-    return result
-};
+function hex2a(hexx) {
+    var hex = hexx.toString();//force conversion
+    var str = '';
+    for (var i = 0; i < hex.length; i += 2)
+        str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
+    return str;
+}
 
 function copyToClipboard(text) {
     var dummy = document.createElement("textarea");
