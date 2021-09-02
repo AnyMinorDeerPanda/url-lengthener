@@ -2,16 +2,14 @@ const urlParams = new URLSearchParams(window.location.search);
 const aCode = urlParams.get('aaaaaaaaaaaaaaaaaaaaaaaaaaaa');
 
 if (aCode) {
-	console.log(aCode)
-    //window.location.replace(degibify(aCode));
-    console.log(degibify(aCode))       
+    window.location.replace(degibify(aCode));    
 }
 
 const element = document.getElementById('lengthen')
 element.addEventListener("click", () => {
     var url = document.getElementById('url').value
     if (validURL(url)) {
-        copyToClipboard("https://aaaaaaaaaaaaaaaaaaaa.xtract.space/?aaaaaaaaaaaaaaaaaaaaaaaaaaaa="+ gibify(url))
+        copyToClipboard("https://url-lengthener.anyminordeerpanda.repl.co/?aaaaaaaaaaaaaaaaaaaaaaaaaaaa="+ gibify(url))
         alert("Link Created for "+ url);
     } else {
         alert("Error: Invalid URL!");
@@ -23,54 +21,56 @@ function gibify(str) {
     let hexArray = hex.split('');
 	let gibChars = hexArray.map(char => {
         const chars = {
-            "0": "غ",
-            "1": "ب",
-            "2": "ج",
-            "3": "د",
-            "4": "ه",
-            "5": "و",
-            "6": "ز",
-            "7": "ح",
-            "8": "ط",
-            "9": "ي",
-            "A": "ك",
-            "B": "ل",
-            "C": "م",
-            "D": "ن",
-            "E": "ص",
-            "F": "ع",
+            '0': 'a',
+			'1': 'à',
+			'2': 'á',
+			'3': 'â',
+			'4': 'ã',
+			'5': 'ä',
+			'6': 'å',
+			'7': 'æ',
+			'8': 'A',
+			'9': 'À',
+			'a': 'Á',
+			'b': 'Â',
+			'c': 'Ã',
+			'd': 'Ä',
+			'e': 'Å',
+			'f': 'Æ'
         }
 		return chars[char];
 	})
 
-	return gibChars.join('');
+    let out = gibChars.join('');
+	return out+ out+ out
 }
 
 function degibify(gib) {
     let gibArray = gib.split('');
 	let strChars = gibArray.map(char => {
         const chars = {
-            "غ": "0",
-            "ب": "1",
-            "ج": "2",
-            "د": "3",
-            "ه": "4",
-            "و": "5",
-            "ز": "6",
-            "ح": "7",
-            "ط": "8",
-            "ي": "9",
-            "ك": "A",
-            "ل": "B",
-            "م": "C",
-            "ن": "D",
-            "ص": "E",
-            "ع": "F",
+            'a': '0',
+			'à': '1',
+			'á': '2',
+			'â': '3',
+			'ã': '4',
+			'ä': '5',
+			'å': '6',
+			'æ': '7',
+			'A': '8',
+			'À': '9',
+			'Á': 'a',
+			'Â': 'b',
+			'Ã': 'c',
+			'Ä': 'd',
+			'Å': 'e',
+			'Æ': 'f'
         }
 		return chars[char];
 	})
 
-    return hex2a(strChars.join(''))
+    let out = hex2a(strChars.join(''))
+    return out.substring(Object.keys(out).length - (Object.keys(out).length / 3), Object.keys(out).length)
 }
 
 function a2hex(str) {
