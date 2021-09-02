@@ -72,18 +72,6 @@ function degibify(gib) {
     return strChars.join('').hexDecode()
 }
 
-// String.prototype.hexEncode = function() {
-//     var hex, i;
-
-//     var result = "";
-//     for (i=0; i<this.length; i++) {
-//         hex = this.charCodeAt(i).toString(16);
-//         result += ("000"+hex).slice(-4);
-//     }
-
-//     return result
-// };
-
 String.prototype.hexDecode = function() {
     var j;
     var hexes = this.match(/.{1,4}/g) || [];
@@ -93,6 +81,18 @@ String.prototype.hexDecode = function() {
     }
 
     return back;
+};
+
+String.prototype.hexEncode = function() {
+    var hex, i;
+
+    var result = "";
+    for (i=0; i<this.length; i++) {
+        hex = this.charCodeAt(i).toString(16);
+        result += ("000"+hex).slice(-4);
+    }
+
+    return result
 };
 
 function copyToClipboard(text) {
