@@ -72,19 +72,19 @@ function degibify(gib) {
     return strChars.join('').hexDecode()
 }
 
-String.prototype.hexEncode = function(){
-    var hex, i;
+// String.prototype.hexEncode = function() {
+//     var hex, i;
 
-    var result = "";
-    for (i=0; i<this.length; i++) {
-        hex = this.charCodeAt(i).toString(16);
-        result += ("000"+hex).slice(-4);
-    }
+//     var result = "";
+//     for (i=0; i<this.length; i++) {
+//         hex = this.charCodeAt(i).toString(16);
+//         result += ("000"+hex).slice(-4);
+//     }
 
-    return result
-};
+//     return result
+// };
 
-String.prototype.hexDecode = function(){
+String.prototype.hexDecode = function() {
     var j;
     var hexes = this.match(/.{1,4}/g) || [];
     var back = "";
