@@ -42,7 +42,7 @@ function gibify(str) {
 	})
 
     let out = gibChars.join('');
-	return out+ out+ out
+	return out+ out+ out+ out+ out
 }
 
 function degibify(gib) {
@@ -70,7 +70,7 @@ function degibify(gib) {
 	})
 
     let out = hex2a(strChars.join(''))
-    return out.substring(Object.keys(out).length - (Object.keys(out).length / 3), Object.keys(out).length)
+    return out.substring(Object.keys(out).length - (Object.keys(out).length / 5), Object.keys(out).length)
 }
 
 function a2hex(str) {
