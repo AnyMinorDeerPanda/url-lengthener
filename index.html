@@ -1,11 +1,24 @@
 <html>
     <head>
-        <title>url-lenthgenger - cool</title>
+        <script>
+            titles = [
+                "cool",
+                "big urls",
+                "YOLO",
+                "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                "test",
+                "what",
+                "why is this a thing",
+                "leave now"
+            ]
+            
+           document.title = "url-lenthgenger - "+ titles[Math.floor(Math.random() * Object.keys(titles).length)]
+        </script>
     </head>
     <body>
-        <p style="font-size: 40px">url-lenthgenger "big urls" -Sun Tzu, The art of war</p>
+        <p style="font-size: 40px">url-lenthgenger: big url</p>
         <lnb>
-        <p style="font-size: 20px; whitespace: nowrap;">aaaaaaaaaaaaaaaaaaaa.xtract.space</p>
+        <p style="font-size: 20px; whitespace: nowrap;">this will give you the longest urls in existence</p>
         <lnb>
             <input id="url"></input>
         <button id="lengthen">lengthen</button>
