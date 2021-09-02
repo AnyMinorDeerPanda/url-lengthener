@@ -1,8 +1,9 @@
 const urlParams = new URLSearchParams(window.location.search);
-const aCode = urlParams.get('aaaaaaaaaaaaaaaaaaaaaaaaaaaa');
+const urlCode = urlParams.get('aaaaaaaaaaaaaaaaaaaaaaaaaaaa');
+const urlLength = 10;
 
-if (aCode) {
-    window.location.replace(degibify(aCode));    
+if (urlCode) {
+    window.location.replace(degibify(urlCode));    
 }
 
 const element = document.getElementById('lengthen')
@@ -42,7 +43,7 @@ function gibify(str) {
 	})
 
     let out = gibChars.join('');
-	return out+ out+ out+ out+ out
+	return out.repeat(urlLength)
 }
 
 function degibify(gib) {
@@ -70,7 +71,7 @@ function degibify(gib) {
 	})
 
     let out = hex2a(strChars.join(''))
-    return out.substring(Object.keys(out).length - (Object.keys(out).length / 5), Object.keys(out).length)
+    return out.substring(Object.keys(out).length - (Object.keys(out).length / urlLength), Object.keys(out).length)
 }
 
 function a2hex(str) {
