@@ -2,6 +2,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const aCode = urlParams.get('aaaaaaaaaaaaaaaaaaaaaaaaaaaa');
 
 if (aCode) {
+	console.log(aCode)
     //window.location.replace(degibify(aCode));
     console.log(degibify(aCode))       
 }
