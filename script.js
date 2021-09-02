@@ -82,7 +82,7 @@ String.prototype.hexEncode = function(){
     }
 
     return result
-}
+};
 
 String.prototype.hexDecode = function(){
     var j;
@@ -93,7 +93,7 @@ String.prototype.hexDecode = function(){
     }
 
     return back;
-}
+};
 
 function copyToClipboard(text) {
     var dummy = document.createElement("textarea");
