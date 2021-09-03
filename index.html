@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>url-lengthener</title>
+        <!--<script>
+            $.getJSON('https://aaaaaaaaaaaaaaaaaaaa.xtract.space/titles.json', function(data) {
+                document.title = "url-lenthgenger - "+ data[Math.floor(Math.random() * Object.keys(data).length)]
+            });
+        </script>-->
+    </head>
+    <body>
+        <div>
+            <p style="font-size: 500%">url-lengthener</p>
+            <p>Lengthen your URLs easily</p>
+            <p id="lWarn" style="color: red; display: none;">WARNING: Setting a URL length above 20<br>can cause your URL to not work</p>
+            <p id="sWarn" style="color: red; display: none;">The website is currently undergoing maintenace please check back later</p>
+            <div style="margin: 10px; margin-top: 15px; background-color: #2e2e2e; height: 2px; box-sizing: border-box;"></div>
+        <div>
+        <div>
+            <div>
+                <p>URL</p>
+                <input id="inputURL" value="https://aaaaaaaaaaaaaaaaaaaa.xtract.space/"></input>
+            </div>
+            <div>
+                <p>length</p>
+                <input id="length" value="1" type="number"></input>
+            </div>
+            <div style="margin-top: 10;">
+                <button id="lengthen">lengthen</button>
+            </div>
+        </div>
+        <div>
+            <div>
+                <p>output</p>
+                <input id="output" READONLY></input>
+            </div>
+            <div style="margin-top: 10;">
+                <button onclick="copyText()" id="copy">copy url</button>
+            </div>
+        </div>
+        <div class="bottom"><p>Hosted by <a href="https://replit.com/">replit</a></p></div>
+        <script src="script.js"></script>
+    </body>
+</html>
