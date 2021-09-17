@@ -12,7 +12,7 @@ button.addEventListener("click", () => {
     let length = document.getElementById('length').value
 
     let output = document.getElementById('output');
-    output.value = "https://aaaaaaaaaaaaaaaaaaaa.xtract.space?aa="+ length+ "&a="+ lengthen(url, length);
+    output.value = window.location.href+ "?aa="+ length+ "&a="+ lengthen(url, length);
 });
 
 function lengthen(input, length) {
