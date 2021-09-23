@@ -6,14 +6,13 @@ if (urlURL) {
     window.location.replace(unlengthen(urlURL, urlLength));
 }
 
-const button = document.getElementById('lengthen')
-button.addEventListener("click", () => {
+function lengthenURL() {
     let url = document.getElementById('inputURL').value
     let length = document.getElementById('length').value
 
     let output = document.getElementById('output');
     output.value = window.location.href+ "?aa="+ length+ "&a="+ lengthen(url, length);
-});
+}
 
 function lengthen(input, length) {
     if (validURL(input)) {
