@@ -1,6 +1,10 @@
 const urlParams = new URLSearchParams(window.location.search);
 const urlLength = urlParams.get('aa');
 const urlURL = urlParams.get('a');
+document.getElementById('inputURL').value = window.location.href
+let theme
+
+getTheme()
 
 if (urlURL) {
     window.location.replace(unlengthen(urlURL, urlLength));
@@ -12,6 +16,47 @@ function lengthenURL() {
 
     let output = document.getElementById('output');
     output.value = window.location.href+ "?aa="+ length+ "&a="+ lengthen(url, length);
+}
+
+function toggleTheme() {
+    theme = localStorage.getItem('theme')
+    if (theme === 'dark') {
+        localStorage.setItem('theme', 'light')
+    } else if (theme === 'light') {
+        localStorage.setItem('theme', 'dark')
+    }
+    getTheme()
+}
+
+async function getTheme() {
+    theme = localStorage.getItem('theme')
+    
+    if (!theme) {
+        localStorage.setItem('theme', 'dark')
+        theme = 'dark'
+    }   
+
+    if (theme === 'dark') {
+        removeClass('light')
+        addClass('dark')
+    } else if (theme === 'light') {
+        removeClass('dark')
+        addClass('light')
+    }
+}
+
+async function addClass(className) {
+    var elementList = document.getElementsByTagName("*");
+    for (var i = 0; i < elementList.length; i++) {
+        elementList[i].classList.add(className);
+    }
+}
+
+async function removeClass(className) {
+    var elementList = document.getElementsByTagName("*");
+    for (var i = 0; i < elementList.length; i++) {   
+        elementList[i].classList.remove(className);
+    }
 }
 
 function lengthen(input, length) {

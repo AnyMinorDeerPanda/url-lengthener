@@ -18,7 +18,7 @@
         <div class="contents">
             <div>
                 <div>
-                    <p style="font-size: 30%">
+                    <p style="font-size: 30%" class="dark">
 ██╗░░░██╗██████╗░██╗░░░░░░░░░░░██╗░░░░░███████╗███╗░░██╗░██████╗░████████╗██╗░░██╗███████╗███╗░░██╗███████╗██████╗░<br>
 ██║░░░██║██╔══██╗██║░░░░░░░░░░░██║░░░░░██╔════╝████╗░██║██╔════╝░╚══██╔══╝██║░░██║██╔════╝████╗░██║██╔════╝██╔══██╗<br>
 ██║░░░██║██████╔╝██║░░░░░█████╗██║░░░░░█████╗░░██╔██╗██║██║░░██╗░░░░██║░░░███████║█████╗░░██╔██╗██║█████╗░░██████╔╝<br>
@@ -42,7 +42,7 @@
                     </div>
                     <div>
                         <p>length</p>
-                        <input id="length" value="1" type="number"></input>
+                        <input id="length" value="1" type="number" min="1"></input>
                     </div>
                     <div style="margin-top: 10;">
                         <button onclick="lengthenURL()">lengthen</button>
@@ -59,8 +59,43 @@
                 </div>
             </div>
         </div>
-        <div class="bottomdiv"><p style="margin: 1;">Other Links</p><br><a href="https://www.xtract.space/">Projects</a></div>
-        <div class="bottom"><p>Hosted by <a href="https://replit.com/">replit</a></p></div>
+        <div class="bottomdiv dark">
+            <div class="contents">
+                <div>
+                    <p style="margin: 1;">
+                        Other Links
+                    </p>
+                    <br>
+                    <a href="https://www.xtract.space/">
+                        Projects
+                    </a>
+                    <br>
+                    <br>
+                    <a href="https://replit.com/">
+                        repl.it
+                    </a>
+                </div>
+            </div>
+            <div class="contents">
+                <div>
+                    <p class="dark" style="margin: 1;">
+                        Options
+                    </p>
+                    <br>
+                    <a onclick="toggleTheme()">
+                        Toggle Theme (beta)
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <p class="dark">
+                Hosted by 
+                <a href="https://replit.com/">
+                    replit
+                </a>
+            </p>
+        </div>
         <script src="script.js"></script>
     </body>
 </html>

@@ -1,55 +1,86 @@
 body {
-    background-color: #111111;
     margin: 0;
 }
 
-p {
-    text-shadow: 0px 0px 8px #ffffff;
-    font-family: Arial;
+* {
+    font-family: arial;
     font-weight: bold;
+}
+
+.dark * {
+    text-shadow: 0px 0px 8px white;
     color: white;
+}
+
+.light * {
+    color: #424242;
+}
+
+p {
     font-size: 150%;
 }
 
+body.dark {
+    background-color: #111111;
+}
+
+body.light {
+    background-color: #F0F0F0;
+}
+
 button {
-    text-shadow: 0px 0px 8px #ffffff;
+    font-size: 150%;
     border-style: none;
     outline: none;
     border-radius: 6px;
-    font-family: Arial;
-    font-weight: bold;
-    color: #ffffff;
-    font-size: 150%;
-    background: #191919;
     padding: 15px;
     text-decoration: none;
 }
 
-button:hover {
+button.dark {
+    background: #191919;
+}
+
+button.dark:hover {
     background: #161616;
 }
 
+button.light {
+    background: #D7D7D7;
+}
+
+button.light:hover {
+    background: #C1C1C1;
+}
+
 input {
-    text-shadow: 0px 0px 8px #ffffff;
+    font-size: 150%;
     border-style: none;
     box-shadow: none;
     outline: none;
     border-radius: 6px;
-    font-family: Arial;
-    font-weight: bold;
-    color: #ffffff;
-    font-size: 150%;
-    background: #191919;
     padding: 15px;
     text-decoration: none;
 }
 
-input:focus, input:hover {
+input.dark {
+    background: #191919;
+}
+
+input.dark:focus, input.dark:hover {
     background: #161616;
 }
 
+input.light {
+    background: #D7D7D7;
+}
+
+input.light:focus, input.light:hover {
+    background: #C1C1C1;
+}
+
 .bottom {
-    position:fixed;
+    position: fixed;
     bottom: 0;
     right: 40px;
     z-index: 100;
@@ -62,32 +93,54 @@ div > p {
 
 a {
     text-decoration: none;
-    font-family: arial;
-    color: #0087FF;
-    text-shadow: 0px 0px 8px #0087FF;
+    font-style: italic;
 }
 
 a:hover {
     text-decoration: underline;
-    color: #005EB2;
-    text-shadow: 0px 0px 8px #005EB2;
+    cursor: pointer;
 }
 
-.contents {
+body > .contents {
     margin: 10px;
 }
 
 .bottomdiv {
-    padding: 25px;
-    margin-top: 50px;
-    height: 100px;
+    transition-duration: 1s;
+    position: fixed;
+    bottom: -125px;
+    width: 100%;
+}
+
+.bottomdiv:hover {
+    bottom: 0px;
+}
+
+.bottomdiv > .contents {
+    position: relative;
+    float: left;
+    margin: 20px;
+}
+
+.bottomdiv.dark {
     background-color: #1B1B1B;
+}
+
+.bottomdiv.light {
+    background-color: #C1C1C1;
 }
 
 .divider {
     margin: 10px;
     margin-top: 15px;
-    background-color: #2e2e2e;
     height: 2px;
     box-sizing: border-box;
+}
+
+.divider.dark {
+    background-color: #2e2e2e;
+}
+
+.divider.light {
+    background-color: #D7D7D7;
 }
