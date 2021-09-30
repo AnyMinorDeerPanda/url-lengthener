@@ -1,10 +1,10 @@
+let theme
+getTheme()
+
 const urlParams = new URLSearchParams(window.location.search);
 const urlLength = urlParams.get('aa');
 const urlURL = urlParams.get('a');
 document.getElementById('inputURL').value = window.location.href
-let theme
-
-getTheme()
 
 if (urlURL) {
     window.location.replace(unlengthen(urlURL, urlLength));

@@ -106,14 +106,10 @@ body > .contents {
 }
 
 .bottomdiv {
-    transition-duration: 1s;
-    position: fixed;
-    bottom: -125px;
-    width: 100%;
-}
-
-.bottomdiv:hover {
-    bottom: 0px;
+    position: relative;
+    margin-top: 50px;
+    overflow: auto;
+    width: auto;
 }
 
 .bottomdiv > .contents {
